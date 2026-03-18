@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Travel Website</title>
+  <title>My-Travel-15 </title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="travel.css" />
@@ -21,7 +21,7 @@
     <!-- Logo -->
     <div class="logo-title">
       <img src="image/logo.png" class="logo">
-      <span class="site-title">My Travel</span>
+      <span class="site-title">My-Travel-15</span>
     </div>
 
     <!-- Desktop Menu -->
@@ -76,20 +76,27 @@
     </div>
     <div class="country-text">
       <h2>Japan</h2>
-      <p>Beautiful culture, temples, and modern cities.</p>
-      <a href="japan.html" class="btn">Explore Japan</a>
+      <p>Beautiful culture, temples, and modern cities.
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure accusamus ut in expedita blanditiis provident voluptate maiores molestiae, adipisci, quisquam soluta est laudantium debitis explicabo beatae ipsam odio, earum nam?
+      </p>
+      <a href="./pages/country.html" class="btn">Explore Japan</a>
+      <
     </div>
   </div>
 
   <!-- Italy -->
   <div id="italy" class="country-row reverse">
     <div class="country-image">
-      <img src="image/Roman-1.jpeg">
+      <img src="./image/Italy food_1.jpg">
     </div>
     <div class="country-text">
       <h2>Italy</h2>
-      <p>Historic cities, architecture, and delicious food.</p>
-      <a href="italy.html" class="btn">Explore Italy</a>
+      <p>Historic cities, architecture, and delicious food.
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam quaerat quae nulla vero earum rerum, iure perferendis nesciunt ratione dolorum cupiditate, debitis incidunt nemo perspiciatis a nihil id voluptatem!
+      </p>
+      <a href="./pages/italy.html" class="btn">Explore Italy</a>
     </div>
   </div>
 
@@ -100,8 +107,11 @@
     </div>
     <div class="country-text">
       <h2>France</h2>
-      <p>Romantic atmosphere, art, and fashion.</p>
-      <a href="france.html" class="btn">Explore France</a>
+      <p>Romantic atmosphere, art, and fashion.
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dolor earum ab. Eum expedita pariatur, id eos tempore impedit ipsum vero itaque inventore aliquam maxime, unde, recusandae voluptatum hic rerum.
+      </p>
+      <a href="./pages/france-egy.html" class="btn">Explore France</a>
     </div>
   </div>
 
@@ -112,12 +122,42 @@
     </div>
     <div class="country-text">
       <h2>Egypt</h2>
-      <p>Ancient pyramids and rich history.</p>
-      <a href="egypt.html" class="btn">Explore Egypt</a>
+      <p>Ancient pyramids and rich history.
+
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid eaque dignissimos eos tenetur perferendis et qui laudantium officia, nostrum nisi. Delectus at nihil maiores laudantium, ab nisi quibusdam atque id.
+      </p>
+      <a href="./pages/egypt.html" class="btn">Explore Egypt</a>
     </div>
   </div>
 
 </section>
-<script src="./burger-menu.jsx"></script>
+<script >
+  document.addEventListener("DOMContentLoaded", () => {
+const toggleButton = document.querySelector(".navbar .mobile-menu-toggle");
+const mobileMenu = document.querySelector(".navbar .mobile-menu-items");
+
+// 👉 開 / 關 menu
+toggleButton.addEventListener("click", () => {
+mobileMenu.classList.toggle("active");
+});
+
+// 🔥 點選 menu item → 自動關閉
+document.querySelectorAll(".mobile-menu-list a").forEach(link => {
+link.addEventListener("click", () => {
+mobileMenu.classList.remove("active");
+});
+});
+
+// 🔥 點外面 → 關閉 menu（進階）
+document.addEventListener("click", (e) => {
+if (
+!mobileMenu.contains(e.target) &&
+!toggleButton.contains(e.target)
+) {
+mobileMenu.classList.remove("active");
+}
+});
+});
+</script>
 </body>
 </html>

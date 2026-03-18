@@ -21,17 +21,22 @@ body {
 .navbar {
   position: fixed;
   top: 0;
+  left : 0;
   width: 100%;
-  background: white;
+  height: 80px;
+  background: lightblue;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   z-index: 1000;
   border-bottom: 1px solid #eee;
+  padding: 0 20px;
 }
 
 .navbar-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 80px;
+  width: 100%;
 }
 
 /* Logo */
@@ -46,7 +51,9 @@ body {
 }
 
 .site-title {
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-size : 28px;
+  color: darkblue;
 }
 
 /* ===== Desktop Menu ===== */
@@ -54,11 +61,25 @@ body {
   display: flex;
   list-style: none;
   gap: 20px;
+  align-items: center;
 }
 
 .main-menu-list a {
   text-decoration: none;
-  color: black;
+  color: darkblue;
+  font-weight: 600;
+}
+.main-menu-list li a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #036;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.main-menu-list a:hover {
+  color: #05a;
 }
 
 /* ===== Mobile Menu ===== */
@@ -68,26 +89,30 @@ body {
 
 .mobile-menu-toggle {
   display: none;
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
+  color: white;
+  z-index: 1001;
 }
 
 /* 👉 右側滑出 */
 .mobile-menu-items {
+  display: none;
   position: fixed;
-  top: 60px;
+  top: 0;
   right: 0;
-  width: 70%;
-  height: 100vh;
-  background: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  background: transparent;
   transform: translateX(100%);
-  transition: 0.3s;
-  z-index: 999;
+  transition: transform 0.3s ease;
+  z-index: 1000;
   padding: 20px;
 }
 
 .mobile-menu-items.active {
   transform: translateX(0);
+  display: block;
 }
 
 .mobile-menu-list {
@@ -100,8 +125,6 @@ body {
 
 .mobile-menu-list a {
   text-decoration: none;
-  color: black;
-  font-size: 18px;
   color: white;
 }
 .mobile-menu-list a:hover {
@@ -110,7 +133,7 @@ body {
 
 /* ===== Hero ===== */
 .hero {
-  margin-top: 60px; /* 防 navbar 蓋 */
+  margin-top: 80px; /* 防 navbar 蓋 */
   height: 70vh;
   background: url("./image/hero.jpg") center/cover no-repeat;
   display: flex;
@@ -125,6 +148,32 @@ body {
   padding: 30px;
   border-radius: 10px;
 }
+.hero-content h1 {
+  font-size : clamp(48px, 6vw, 80px);
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+.hero-content p {
+  font-size: clamp(20px, 3vw, 32px);
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,07);
+}
+
+@keyframes floatText {
+  0% {
+    transform: translateY(50px); opacity: 0;
+  }
+  100% {
+     transform: translateY(0); opacity: 1;
+  }
+}
+  .hero-content h1 {
+     animation: floatText 1s ease-out forwards; 
+  } 
+  .hero-content p {
+    animation: floatText 1.2s ease-out forwards; 
+  }
 
 .hero-btn {
   display: inline-block;
@@ -136,6 +185,10 @@ body {
 }
 
 /* ===== Country Section ===== */
+.countries {
+  padding : 40px 20px;
+  background: #f5f7fa;
+}
 .country-section {
   padding: 40px 20px;
 }
@@ -143,8 +196,8 @@ body {
 .country-row {
   display: flex;
   align-items: center;
-  gap: 40px;
-  margin-bottom: 50px;
+  gap: 20px;
+  margin-bottom: 40px;
 }
 
 .country-row.reverse {
@@ -163,7 +216,7 @@ body {
   flex: 1;
   padding: 10px;
   display: flex;
-  transition: transorm 0.3s ease;
+  transition: transform 0.3s ease;
 }
 .country-image img:hover {
     transform: scale(1.05);
@@ -171,12 +224,29 @@ body {
 /* 文字 */
 .country-text {
   flex: 1;
+  padding: 20px;
+  background-color: #cce0ff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .country-text h2 {
   margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color : #036;
 }
-
+.country-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #003366;
+}
+/* Explore btn */
 .btn {
   display: inline-block;
   margin-top: 10px;
@@ -185,7 +255,18 @@ body {
   color: white;
   text-decoration: none;
 }
-
+.country-text a {
+  background-color: #003360;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  width: fit-content;
+}
+.country-text a:hover {
+  background-color: #024;
+}
 /* ===== 防錨點被蓋 ===== */
 section {
   scroll-margin-top: 70px;
@@ -194,93 +275,98 @@ section {
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
 
-  /* 隱藏桌面 menu */
-  .main-menu {
-    display: none;
-  }
-
-  /* 顯示漢堡 */
-  .mobile-menu-toggle {
-    display: block;
-  }
-
-  /* 國家變直排 */
-  .country-row {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .country-row.reverse {
-    flex-direction: column;
-  }
-}
-@media (max-width: 768px) {
-
   /* ✅ 隱藏桌面 menu */
   .main-menu {
     display: none;
   }
-
-  /* ✅ 顯示 ☰ */
-  .mobile-menu-toggle {
-    display: block;
-    font-size: 24px;
-    cursor: pointer;
+  .hero-content h1 {
+    font-size : 32px;
   }
-
-  /* ✅ 手機 menu 滑出設定 */
-  .mobile-menu-items {
-    position: fixed;
-    top: 60px;
-    right: 0;
-    width: 70%;
-    height: 100vh;
-
-    background: rgba(0, 0, 0, 0.3);
-
-    transform: translateX(100%);
-    transition: 0.3s;
-    z-index: 999;
-    padding: 20px;
-  }
-
-  .mobile-menu-items.active {
-    transform: translateX(0);
-  }
-
-  /* ✅ menu 文字 */
-  .mobile-menu-list a {
-    color: white;
-    font-size: 18px;
-  }
-
-  /* ✅ country 直排 */
-  .country-row {
-    flex-direction: column;
-    text-align: center;
+  .hero-content p {
+    font-size: 16px;
   }
 
   .country-row.reverse {
     flex-direction: column;
   }
 
-  /* ✅ 圖片不要太大 */
-  .country-image img {
-    max-width: 100%;
-    height: 220px;
-  }
   .country-image {
-    padding: 0;
+    padding: 10px;
+  }
+ .country-row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .country-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  .country-text {
+    width: 100%;
   }
 
-  /* ✅ hero 字縮細一點 */
-  .hero-content h1 {
-    font-size: 24px;
-  }
   .hero {
     height: 40vh;
     padding: 20px;
     background-position: center;
     background-size: cover;
+  }
+
+  /* 顯示漢堡 */
+  .mobile-menu-toggle {
+    display: block;
+    color: darkblue;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  /* 手機 menu 滑出設定 */
+  .mobile-menu-items {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: auto;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: rgba(0,0,0,0.6);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1002;
+    padding: 10px;
+  }
+
+  .mobile-menu-items.active {
+     transform: translateX(0);
+     display: block;
+  }
+
+  /* ✅ menu 文字 */
+  .mobile-menu-list a {
+    display: block;
+    margin: 10px 20px;
+    font-size: 18px;
+    padding: 12px ;
+    background-color: #036;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    text-decoration: none;
+    text-decoration: none;
+  }
+  .mobile-menu-list {
+    padding-top: 50px;
+    list-style: none;
+    margin: 0;
+    padding-top: 50px;
+    text-align: center;
+  }
+  .mobile-menu-list li {
+    margin: 8px 0;
+  }
+  .mobile-menu-list li a:hover {
+    background-color: #05a;
   }
 }

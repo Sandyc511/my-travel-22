@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>郵輪行程列表</title>
+  <link rel="stylesheet" href="./egypty.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="logo">旅遊網站 LOGO</div>
+    <div class="top-right-info">Mar 16 2024</div>
+  </header>
+
+  <main class="page-container">
+    <!-- 左側側邊選單 -->
+    <aside class="sidebar">
+      <ul>
+        <li class="active">三井郵輪介紹</li>
+        <li>郵輪上體驗</li>
+        <li>出發航線地圖</li>
+        <li>常見問題</li>
+        <li>客服聯絡資料</li>
+      </ul>
+    </aside>
+
+    <!-- 右側主要內容 -->
+    <section class="main-content">
+      <!-- 上方廣告/影片區 -->
+      <div class="hero-row">
+        <div class="hero-main">
+          <img src="./photo/Egypt-1.jpg" alt="主視覺" />
+        </div>
+        <div class="hero-side">
+          <div class="hero-side-item big">
+            <img src="./photo/Egypt-2.jpeg" alt="側邊廣告1" />
+          </div>
+          <div class="hero-side-item">
+            <img src="./photo/Roman-1.jpeg" alt="側邊廣告2" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 搜尋區塊 -->
+      <div class="search-section">
+        <h2>搜尋航程</h2>
+        <form class="search-form">
+          <div class="form-row">
+            <label>
+              出發月份
+              <select>
+                <option>不限</option>
+                <option>2026-04</option>
+                <option>2026-05</option>
+              </select>
+            </label>
+            <label>
+              目的地
+              <select>
+                <option>不限</option>
+                <option>日本</option>
+                <option>地中海</option>
+              </select>
+            </label>
+            <label>
+              航運公司
+              <select>
+                <option>不限</option>
+                <option>三井 OCEAN</option>
+                <option>SUN PRINCESS</option>
+              </select>
+            </label>
+            <button type="submit" class="btn-primary">搜尋</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- 即時艙房/優惠列表 -->
+      <section class="cruise-section">
+        <h2>即時艙房船票／優惠區</h2>
+        <div class="card-list">
+          <article class="cruise-card">
+            <img src="./photo/Paris.jpeg" alt="郵輪1" />
+            <div class="card-body">
+              <h3>MITSUI OCEAN FUJI</h3>
+              <p>九州‧濟州島 5 天4 夜 郵輪假期。</p>
+              <p class="price">HK$3,190 起 / 人</p>
+            </div>
+          </article>
+
+          <article class="cruise-card">
+            <img src="./photo/Paris-2.jpeg" alt="郵輪2" />
+            <div class="card-body">
+              <h3>MITSUI OCEAN SAKURA</h3>
+              <p>日本本州 6 天5 夜 深度之旅。</p>
+              <p class="price">HK$7,100 起 / 人</p>
+            </div>
+          </article>
+
+          <article class="cruise-card">
+            <img src="./photo/Roman-1.jpeg" alt="郵輪3" />
+            <div class="card-body">
+              <h3>地中海 郵輪假期</h3>
+              <p>2027 年 8–10 月 多航次選擇。</p>
+              <p class="price">HK$7,900 起 / 人</p>
+            </div>
+          </article>
+
+          <article class="cruise-card">
+            <img src="./photo/Paris-2.jpeg" alt="郵輪4" />
+            <div class="card-body">
+              <h3>SUN PRINCESS</h3>
+              <p>北歐峽灣 9 天8 夜 豪華之旅。</p>
+              <p class="price">HK$5,749 起 / 人</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
