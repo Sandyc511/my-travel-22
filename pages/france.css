@@ -1,7 +1,7 @@
 /* ===== Reset ===== */
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0 ;
+  padding: 0 ;
   box-sizing: border-box;
 }
 
@@ -16,44 +16,119 @@ body {
   margin: 0 auto;
   padding: 0 15px;
 }
+
+/* ===== Header ===== */
+.header {
+  background: linear-gradient(135deg,rgba(172, 205, 236, 0.8));
+  color: #000;
+  color: lightblue;
+  padding: 20px;
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+  margin-top: 0px;
+  position: relative;
+  z-index: 1;
+}
+.header h1 {
+  font-size :36px;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  animation: glow 3s ease-in-out infinite alternate;
+}
+.header p {
+  font-size : 20px;
+  color: coral;
+}
+@keyframes glow {
+  from { 
+    text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700;
+  }
+  to { 
+    text-shadow: 0 0 20px #ff6b6b, 0 0 40px #ff6b6b;
+  }
+}
+.header a { 
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  height: 90vh;
+  margin-top: 0;
+  overflow : hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 5;
+}
+
+.hero-text h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
 /* ===== Navbar ===== */
 .navbar {
-  position: fixed;
+  position: absolute;
   top: 0;
-  left : 0;
+  left: 0;
   width: 100%;
   height: 80px;
-  background: lightblue;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  z-index: 1000;
-  border-bottom: 1px solid #eee;
+  background: rgba(141, 174, 218, 0.5);
   padding: 0 20px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar-flex {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: 80px;
+  align-items: center !important;
+  height: 55px !important; 
   width: 100%;
 }
 
 /* Logo */
 .logo {
-  height: 40px;
+  height: 50px ! important;
+  width : auto !important;
+  object-fit: contain ! important;
+  max-height: 50px !important;
 }
 
 .logo-title {
-  display: flex;
+  height: auto ! important; 
+  display: flex !important;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .site-title {
-  font-size: 1.5rem;
-  font-size : 28px;
+  font-size : 25px;
   color: darkblue;
+  line-height: 1.2 ! important;
 }
+
 
 /* ===== Desktop Menu ===== */
 .main-menu-list {
@@ -64,71 +139,24 @@ body {
 }
 
 .main-menu-list a {
-  text-decoration: none;
-  color: darkblue;
-  font-weight: 600;
-}
-.main-menu-list li a {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #036;
   color: white;
-  border-radius: 5px;
+  text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s;
-}
-.main-menu-list a:hover {
-  color: #05a;
+  padding: 8px 16px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease;
 }
 
-/* ===== Mobile Menu ===== */
+.main-menu-list a:hover {
+  background-color: rgba(0, 51, 102, 0.9);
+}
+
+/* ===== Mobile Menu 容器 ===== */
 .mobile-menu {
   position: relative;
 }
 
-.mobile-menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: white;
-  z-index: 1001;
-}
-
-/* 👉 右側滑出 */
-.mobile-menu-items {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
-  z-index: 1000;
-  padding: 20px;
-}
-
-.mobile-menu-items.active {
-  transform: translateX(0);
-  display: block;
-}
-
-.mobile-menu-list {
-  list-style: none;
-}
-
-.mobile-menu-list li {
-  margin-bottom: 20px;
-}
-
-.mobile-menu-list a {
-  text-decoration: none;
-  color: white;
-}
-.mobile-menu-list a:hover {
-    color: orange;
-}
 /* ===== 漢堡包按鈕 ===== */
 .mobile-menu-toggle {
   display: none;
@@ -151,7 +179,7 @@ body {
   transition: all 0.3s ease;
 }
 
-/* 漢堡包開啟動畫 */
+/* 漢堡包 → X 的動畫 */
 .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
   transform: rotate(45deg) translate(8px, 8px);
 }
@@ -164,41 +192,33 @@ body {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* ===== Mobile Menu ===== */
+/* ===== 手機選單（右側滑出）===== */
 .mobile-menu-items {
   display: none;
   position: fixed;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  height: calc(100vh - 60px);
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 320px;
+  height: 100%;
   background-color: rgba(0, 51, 102, 0.95);
-  padding: 20px;
-  z-index: 999;
   backdrop-filter: blur(10px);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  padding: 60px 20px 20px 20px;
 }
 
 .mobile-menu-items.active {
   display: block;
-  animation: slideDown 0.4s ease-out;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transform: translateX(0);
 }
 
 .mobile-menu-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
 .mobile-menu-list li {
@@ -206,16 +226,15 @@ body {
 }
 
 .mobile-menu-list a {
-  text-decoration: none;
-  color: white;
-  font-size: 20px;
   display: block;
+  color: white;
   text-align: center;
+  font-size: 20px;
+  padding: 15px;
   background-color: rgba(255, 255, 255, 0.1);
-  padding: 15px 20px;
   border-radius: 8px;
+  text-decoration: none;
   transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
 }
 
 .mobile-menu-list a:hover {
@@ -223,58 +242,42 @@ body {
   transform: translateX(10px);
 }
 
-/* Header */
-.header {
-  text-align: center;
-  padding: 20px;
-  font-size: 24px;
-}
-
-/* Hero */
-.hero {
-  position: relative;
-  height: 500px;
-  overflow: hidden;
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-}
-
-.hero-text h2 {
-  font-size: 40px;
-  margin: 0;
-}
-
-/* Section */
+/* ===== Section 內容區塊 ===== */
 .section {
   padding: 60px 20px;
 }
 
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(2 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 .container {
   display: flex;
-  align-items: center;
-  gap: 40px;
-  max-width: 1000px;
-  margin: auto;
+  align-items: stretch;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+.img {
+  flex : 1;
 }
 
 .img img {
   width: 100%;
+  height: 100%;
   border-radius: 10px;
+  object-fit: cover;
 }
 
+.text {
+  flex: 1;
+  padding: 30px;
+}
 /* 文字 */
 .text h2 {
   margin-bottom: 10px;
@@ -284,22 +287,12 @@ body {
   color: #555;
   line-height: 1.6;
 }
-
-/* Button */
-button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  border: 1px solid black;
-  background: transparent;
-  cursor: pointer;
-}
-
 /* 反轉（台里那行） */
 .reverse .container {
   flex-direction: row-reverse;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 .footer {
   text-align: center;
   padding: 20px;
@@ -323,4 +316,14 @@ button {
   .hero-text h2 {
     font-size: 28px;
   }
+
+  /* 桌面選單隱藏，手機漢堡出現 */
+  .main-menu-list {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
 }
+

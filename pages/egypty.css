@@ -11,8 +11,8 @@ body {
 }
 
 /* 頂部列 */
-.top-bar {
-  height: 48px;
+.sidebar {
+  height: auto;
   background: #ffffff;
   border-bottom: 1px solid #e1e1e1;
   display: flex;
@@ -22,10 +22,22 @@ body {
   font-size: 14px;
 }
 
+/* Logo */
 .logo {
-  font-weight: 600;
+  height: 40px;
 }
 
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-size : 28px;
+  color: darkblue;
+}
 .top-right-info {
   color: #777;
 }
@@ -114,14 +126,14 @@ body {
 }
 
 /* 搜尋區 */
-.search-section {
+.hero-section {
   background: #ffffff;
   border-radius: 8px;
   padding: 16px 20px;
   border: 1px solid #e4e4e4;
 }
 
-.search-section h2 {
+.hero-section h2 {
   font-size: 16px;
   margin-bottom: 12px;
 }
@@ -133,22 +145,13 @@ body {
   align-items: center;
 }
 
-.search-form label {
+.hero-section {
   font-size: 13px;
   color: #555;
   display: flex;
   flex-direction: column;
 }
-
-.search-form select {
-  margin-top: 4px;
-  min-width: 140px;
-  padding: 6px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 13px;
-}
-
+/*
 .btn-primary {
   padding: 8px 18px;
   background: #3266ff;
@@ -163,7 +166,7 @@ body {
 .btn-primary:hover {
   background: #244dcc;
 }
-
+*/
 /* 下方卡片區 */
 .cruise-section {
   background: #ffffff;

@@ -42,6 +42,8 @@ body {
 /* Logo */
 .logo {
   height: 40px;
+  max-height: 35px;
+  width: auto;
 }
 
 .logo-title {
