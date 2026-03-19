@@ -1,16 +1,14 @@
-
 <!DOCTYPE html>
-<html lang="zh-HK">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japan Tour Detail</title>
-   <link rel="stylesheet" href="./japan.css" />
-
+  <title>My Travel Website</title>
+  <link rel="stylesheet" href="./france.css">
 </head>
 <body>
 
-  <!-- ===== Navbar ===== -->
+<!-- ===== Navbar ===== -->
   <nav class="navbar">
     <div class="container navbar-flex">
       <div class="logo-title">
@@ -37,46 +35,52 @@
     </div>
   </nav>
 
-  <!-- ===== Hero ===== -->
-  <section class="hero" style="background-image: url('./photo/travel-world-monument-concept_1097408-211.jpg')">
-    <div class="hero-content">
-      <h1>Explore Japan</h1>
-      <p>Discover history, attractions, food, and transportation info</p>
-    </div>
-  </section>
+<!-- 🔝 Header -->
+<header class="header">
+  <h1>LOVE IS ON</h1>
+</header>
 
-  <!-- ===== Info Cards ===== -->
+<!-- 🌄 Hero -->
+<section class="hero">
+  <img src="./photo/Paris-1.jpeg" alt="France">
+  <div class="hero-text">
+    <h2>法國婚禮</h2>
+    <p>浪漫歐洲婚禮體驗</p>
+  </div>
+</section>
 
-  <section class="info-cards container">
-    <div class="card">
-        <div class="card-image">
-            <img src="./photo/Italy food_2.jpg" alt="Food">
-        </div>
-      <h2>History</h2>
-      <p>介紹景點歷史背景，例如寺廟、古城、文化遺跡等。Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque officia ducimus recusandae, reprehenderit adipisci explicabo aperiam nihil magnam sequi nam quod neque mollitia, molestias unde praesentium necessitatibus harum animi sit!</p>
+<!-- 🇯🇵 日本 -->
+<section class="section">
+  <div class="container">
+    <div class="img">
+      <img src="./photo/Paris-2.jpeg" alt="Japan">
     </div>
-    <div class="card">
-           <div class="card-image">
-            <img src="./photo/Italy food_3.jpg" alt="Food">
-        </div>
-      <h2>Attractions</h2>
-      <p>介紹觀光景點特色與必去亮點，例如名勝、樂園、博物館。</p>
+    <div class="text">
+      <h2>日本</h2>
+      <p>秋季如畫的自然風光，初雪落成的靜謐時刻，日式婚禮充滿細膩與傳統的美感。</p>
+      <button>查看更多 →</button>
     </div>
-    <div class="card">
-           <div class="card-image">
-            <img src="./photo/Italy food_2.jpg" alt="Food">
-        </div>
-      <h2>Food</h2>
-      <p>介紹當地美食、餐廳推薦、特色小吃與文化。</p>
+  </div>
+</section>
+
+<!-- 🇹🇭 台里 -->
+<section class="section reverse">
+  <div class="container">
+    <div class="img">
+      <img src="./photo/Paris.jpeg" alt="Bali">
     </div>
-    <div class="card">
-           <div class="card-image">
-            <img src="./photo/Italy food_3.jpg" alt="Food">
-        </div>
-      <h2>Transportation</h2>
-      <p>介紹交通方式，如火車、巴士、機場接駁與票價資訊。</p>
+    <div class="text">
+      <h2>台里</h2>
+      <p>在海天一色的夢幻場景中，打造屬於你們的浪漫婚禮，留下難忘回憶。</p>
+      <button>查看更多 →</button>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- 🔚 Footer -->
+<footer class="footer">
+  <p>© 2026 My Travel Website</p>
+</footer>
 <script>
 function goBack() {
   if (history.length > 1) {

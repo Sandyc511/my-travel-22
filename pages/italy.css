@@ -1,22 +1,228 @@
-body {
+/* ===== Reset ===== */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Header */
-.header {
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* ===== 通用 Container ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+/* ===== Navbar ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left : 0;
+  width: 100%;
+  height: 80px;
+  background: lightblue;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+  padding: 0 20px;
+}
+
+.navbar-flex {
   display: flex;
   justify-content: space-between;
-  padding: 15px 30px;
-  background: white;
+  align-items: center;
+  height: 80px;
+  width: 100%;
 }
 
-.header a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #333;
+/* Logo */
+.logo {
+  height: 40px;
 }
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-size : 28px;
+  color: darkblue;
+}
+
+/* ===== Desktop Menu ===== */
+.main-menu-list {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+}
+
+.main-menu-list a {
+  text-decoration: none;
+  color: darkblue;
+  font-weight: 600;
+}
+.main-menu-list li a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #036;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.main-menu-list a:hover {
+  color: #05a;
+}
+
+/* ===== Mobile Menu ===== */
+.mobile-menu {
+  position: relative;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  z-index: 1001;
+}
+
+/* 👉 右側滑出 */
+.mobile-menu-items {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.mobile-menu-items.active {
+  transform: translateX(0);
+  display: block;
+}
+
+.mobile-menu-list {
+  list-style: none;
+}
+
+.mobile-menu-list li {
+  margin-bottom: 20px;
+}
+
+.mobile-menu-list a {
+  text-decoration: none;
+  color: white;
+}
+.mobile-menu-list a:hover {
+    color: orange;
+}
+/* ===== 漢堡包按鈕 ===== */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* 漢堡包開啟動畫 */
+.mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ===== Mobile Menu ===== */
+.mobile-menu-items {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-color: rgba(0, 51, 102, 0.95);
+  padding: 20px;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+}
+
+.mobile-menu-items.active {
+  display: block;
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-menu-list li {
+  margin: 0;
+}
+
+.mobile-menu-list a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  display: block;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.mobile-menu-list a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateX(10px);
+}
+
 
 /* Banner */
 .banner {

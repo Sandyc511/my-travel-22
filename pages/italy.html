@@ -10,15 +10,32 @@
 <body>
 
 <!-- 🔝 Header -->
-<header class="header">
-  <div class="logo">Miramar Travel</div>
-  <nav>
-    <a href="#">旅行團</a>
-    <a href="#">郵輪</a>
-    <a href="#">自由行</a>
-    <a href="#">酒店</a>
+<!-- ===== Navbar ===== -->
+  <nav class="navbar">
+    <div class="container navbar-flex">
+      <div class="logo-title">
+        <img src="./photo/logo.png" alt="Logo" class="logo">
+        <span class="site-title">My-Travel-15</span>
+      </div>
+      <ul class="main-menu-list">
+        <li><a href="../travel.html">Home</a></li>
+        <li><a href="./japan.html">Janpan</a></li>
+        <li><a href="./italy.html">Italy</a></li>
+        <li><a href="./france-egy.html">France</a></li>
+        <li><a href="./egypt.html">Egypt</a></li>
+      </ul>
+      <div class="mobile-menu-toggle">&#9776;</div>
+    </div>
+    <div class="mobile-menu-items">
+      <ul class="mobile-menu-list">
+        <li><a href="#home" onclick="closeMenu()">Home</a></li>
+          <li><a href="#japan" onclick="closeMenu()">Japan</a></li>
+          <li><a href="#italy" onclick="closeMenu()">Italy</a></li>
+          <li><a href="#france" onclick="closeMenu()">France</a></li>
+          <li><a href="#egypt" onclick="closeMenu()">Egypt</a></li>
+      </ul>
+    </div>
   </nav>
-</header>
 
 <!-- 🌄 Banner -->
 <section class="banner">
@@ -31,24 +48,6 @@
 
 <!-- 主內容 -->
 <div class="main">
-
-  <!-- 🧰 左邊篩選 -->
-  <aside class="sidebar">
-    <h3>篩選</h3>
-
-    <div class="filter">
-      <p>價格</p>
-      <input type="range">
-    </div>
-
-    <div class="filter">
-      <p>天數</p>
-      <input type="range">
-    </div>
-
-
-  </aside>
-
   <!-- 📦 右邊列表 -->
   <section class="content">
 
@@ -74,6 +73,28 @@
   </section>
 
 </div>
+<script>
+function goBack() {
+  if (history.length > 1) {
+    window.history.back();
+  } else {
+    window.location.href = "index.html";
+  }
+}
+
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+
+document.addEventListener("click", function(e) {
+  const menu = document.getElementById("menu");
+  const btn = document.querySelector("button[onclick='toggleMenu()']");
+
+  if (!menu.contains(e.target) && !btn.contains(e.target)) {
+    menu.classList.remove("active");
+  }
+});
+</script>
 
 </body>
 </html>
